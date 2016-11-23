@@ -14,4 +14,9 @@ public class Monster extends Character{
 	defense = 20;
 	attack = 5;
     }
+    
+    public String about(){
+	String r = "\t One fine day, we asked a Monster how he was doing.\n";
+	r += "He said \"Grrrrrrrrrrrrrr\", and ate the scribe.";
+	return r; 
 }
