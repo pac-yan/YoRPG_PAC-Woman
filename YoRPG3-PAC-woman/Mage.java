@@ -38,5 +38,13 @@ public class Mage extends Character{
 	retStr += "\tBe careful to trust a mage, they only help for a price!\n";
 	return retStr;
     }
-    
+    public void specialize(){
+	double powerUp = defense * .5;
+	strength = (int) (strength + powerUp);
+	defense = (int) (defense - powerUp);
+    }
+    public void normalize(){
+	strength = origStr;
+	defense = origDef;
+   } 
 }

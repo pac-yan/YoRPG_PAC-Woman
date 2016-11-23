@@ -36,4 +36,13 @@ public class Archer extends Character {
 	retStr += "\tOne can only be grateful nukes have yet to be invented.\n";
 	return retStr;
     }
+    public void specialize(){
+	double powerUp = defense * .5;
+	strength = (int) (strength + powerUp);
+	defense = (int) (defense - powerUp);
+    }
+    public void normalize(){
+	strength = origStr;
+	defense = origDef;
+   } 
 }
