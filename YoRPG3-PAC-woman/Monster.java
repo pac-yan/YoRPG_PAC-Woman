@@ -19,4 +19,9 @@ public class Monster extends Character{
 	String r = "\t One fine day, we asked a Monster how he was doing.\n";
 	r += "He said \"Grrrrrrrrrrrrrr\", and ate the scribe.";
 	return r; 
+    }
+    
+    public void normalize(){}
+    
+    public void specialize(){}
 }
