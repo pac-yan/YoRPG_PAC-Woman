@@ -36,4 +36,13 @@ public class Rogue extends Character {
 	retStr += "\tAll who meet one: check your pockets.\n";
 	return retStr;
     }
+    public void specialize(){
+	double powerUp = defense * .5;
+	strength = (int) (strength + powerUp);
+	defense = (int) (defense - powerUp);
+    }
+    public void normalize(){
+	strength = origStr;
+	defense = origDef;
+    } 
 }

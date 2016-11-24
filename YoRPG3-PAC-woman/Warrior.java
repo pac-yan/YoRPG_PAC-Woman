@@ -36,4 +36,13 @@ public class Warrior extends Character {
 	retStr += "\tA warrior is often the first to jump into a dangerous situation.\n";
 	return retStr;
     }
+    public void specialize(){
+	double powerUp = defense * .5;
+	strength = (int) (strength + powerUp);
+	defense = (int) (defense - powerUp);
+    }
+    public void normalize(){
+	strength = origStr;
+	defense = origDef;
+   } 
 }

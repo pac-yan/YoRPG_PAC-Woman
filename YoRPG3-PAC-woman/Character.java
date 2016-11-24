@@ -4,7 +4,7 @@
 //HW32--Ye Olde Role Playing Game, Expanded
 //2016-11-20
 
-public class Character{
+public abstract class Character{
     // ------------- INSTANCE VARIABLES -------------
     protected int hp; 
     protected int strength;
@@ -56,19 +56,12 @@ public class Character{
 	return damage;
     }
     
-    public String about(){
-	return "Standard character. Move along now";
-    }
+    public abstract String about();
+
+    public abstract void specialize();
+
+    public abstract void normalize();
     
-    public void specialize(){ //prepares warrior to perform a special attack
-	double powerUp = defense * .5;
-	strength = (int) (strength + powerUp); //increases strength
-	defense = (int) (defense - powerUp); //decreases defense
-	    }
-    
-    public void normalize(){ //prepares warrior to perform a normal attack
-	strength = origStr; //resets strength attribute
-	defense = origDef; //resets defense attribute
-    }
+
 
 }
