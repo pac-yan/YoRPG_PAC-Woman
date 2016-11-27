@@ -89,11 +89,11 @@ public class YoRPG
 	catch(IOException e) {}
 	
 	//instantiate the player's character
-	if (breed == 1) { pat = new Warrior (name);}
-	else if (breed == 2) { pat = new Mage (name);}
-	else if (breed == 3) { pat = new Rogue (name);}
-	else if (breed == 4) { pat = new Archer (name);}
-	else {pat = new WarriorPrincess (name);}
+	if (breed == 1) { pat = new Warrior (name,150,35,50,5);}
+	else if (breed == 2) { pat = new Mage (name,150,35,50,5);}
+	else if (breed == 3) { pat = new Rogue (name,150,30,25,6);}
+	else if (breed == 4) { pat = new Archer (name,150,30,25,6);}
+	else {pat = new WarriorPrincess (name,150,35,50,5);}
 
 	System.out.println(pat.about());
 
@@ -137,7 +137,7 @@ public class YoRPG
 		if (pat.speed > smaug.speed)
 		    return attackMethodA(pat, smaug);
 		else
-		    return  attackMethodB(smaug, pat);
+		    return attackMethodB(smaug, pat);
 	    }
 	}//end else
 

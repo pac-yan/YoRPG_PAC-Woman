@@ -27,12 +27,11 @@ public abstract class Character{
 	speed = 1;
     }
     
-    public Character(String nombre, int vida, int fuerte, int def, double ATTACK, int rapido){ //overloaded constructor
+    public Character(String nombre, int vida, int fuerte, int def, double ATTACK){ //overloaded constructor
 	hp = vida;
 	strength = fuerte;
 	defense = def;
 	attack = ATTACK;
-	speed = rapido;
     }
 
     //METHODS

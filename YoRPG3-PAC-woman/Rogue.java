@@ -25,6 +25,7 @@ public class Rogue extends Character {
 	defense = def;
 	origDef = def;
 	attack = ATTACK;
+	speed = 2;
     }
    
     public String getName(){ 

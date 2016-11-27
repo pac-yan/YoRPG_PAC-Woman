@@ -28,6 +28,7 @@ public class WarriorPrincess extends Character{
 	defense = def;
 	origDef = def;
 	attack = ATTACK;
+	speed = 0;
     }
 
     

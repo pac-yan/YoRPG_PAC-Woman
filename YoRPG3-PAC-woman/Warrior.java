@@ -25,6 +25,7 @@ public class Warrior extends Character {
 	defense = def;
 	origDef = def;
 	attack = ATTACK;
+	speed = 0;
     }
    
     public String getName(){ 
