@@ -13,6 +13,7 @@ public class WarriorPrincess extends Character{
     //CONSTRUCTOR
     public WarriorPrincess(){
 	super();
+	speed = 0;
     }
 
     public WarriorPrincess(String nombre){

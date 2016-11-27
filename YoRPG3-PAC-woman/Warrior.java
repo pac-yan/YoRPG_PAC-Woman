@@ -11,6 +11,7 @@ public class Warrior extends Character {
     //CONSTUCTORS
     public Warrior(){
 	super();
+	speed = 0;
     }
     public Warrior(String nombre){ //overloaded constructor
 	this();

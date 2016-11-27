@@ -12,24 +12,27 @@ public abstract class Character{
     protected double attack;
     protected int origStr;
     protected int origDef;
+    protected int speed;
     //protected Character breed;
     //----------------------------------------------
 
     //CONSTRUCTORS
     public Character(){ //default constructor, initialiazes all instance vars
-	hp = 100;
-	strength = 25;
+	hp = 150;
+	strength = 35;
 	defense = 25;
 	attack = 5.0;
 	origStr = strength;
 	origDef = defense;
+	speed = 1;
     }
     
-    public Character(String nombre, int vida, int fuerte, int def, double ATTACK){ //overloaded constructor
+    public Character(String nombre, int vida, int fuerte, int def, double ATTACK, int rapido){ //overloaded constructor
 	hp = vida;
 	strength = fuerte;
 	defense = def;
 	attack = ATTACK;
+	speed = rapido;
     }
 
     //METHODS

@@ -134,34 +134,10 @@ public class YoRPG
 		    pat.specialize();
 		else
 		    pat.normalize();
-
-		d1 = pat.attack( smaug );
-		d2 = smaug.attack( pat );
-
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-				    " points of damage.");
-
-		System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-				    " for " + d2 + " points of damage.");
-	    }//end while
-
-	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-		System.out.println( "'Twas an epic battle, to be sure... " + 
-				    "You cut ye olde monster down, but " +
-				    "with its dying breath ye olde monster. " +
-				    "laid a fatal blow upon thy skull." );
-		return false;
-	    }
-	    //option 2: you slay the beast
-	    else if ( !smaug.isAlive() ) {
-		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
-		return true;
-	    }
-	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
-		System.out.println( "Ye olde self hath expired. You got dead." );
-		return false;
+		if (pat.speed > smaug.speed)
+		    return attackMethodA(pat, smaug);
+		else
+		    return  attackMethodB(smaug, pat);
 	    }
 	}//end else
 
@@ -169,7 +145,58 @@ public class YoRPG
     }//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    //attack method for when speed of fighter > speed of monster
+    public static boolean attackMethodA(Character a, Character b){
+	int d1,d2;
+	d1 = a.attack( b );
+	System.out.println( "\n" + a.getName() + " dealt " + d1 +
+			    " points of damage.");
+	if (b.isAlive()){
+	    d2 = b.attack( a );	    
+	    System.out.println( "\n" + "Ye Olde Monster smacked " + a.getName() + " for " + d2 + " points of damage.");
+	    if (!a.isAlive()){
+		System.out.println( "Ye olde self hath expired. You got dead.") ;		return false;
+	    }
+	    else
+		return true;
+	}
+	else {
+	    System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+	    return true;
+	}
+    }
+    //monster speed > fighter speed
+    public static boolean attackMethodB(Character a, Character b){
+	int d1,d2;
+	d1 = b.attack( a );
+	d2 = a.attack( b );
 
+	System.out.println( "\n" + "Ye Olde Monster smacked " + b.getName() +
+			    " for " + d2 + " points of damage.");
+	System.out.println( "\n" + b.getName() + " dealt " + d1 +
+			    " points of damage.");
+    
+    //option 1: you & the monster perish
+	if ( !a.isAlive() && !b.isAlive() ) {
+	    System.out.println( "'Twas an epic battle, to be sure... " + 
+				"Ye olde monster cut you down, but " +
+				"with thy dying breath the brave fighter " +
+				"laid a fatal blow upon its skull." );
+	    return false;
+	}
+	//option 2: you slay the beast
+	else if ( !a.isAlive() ) {
+	    System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+	    return true;
+	}
+	//option 3: the beast slays you
+	else if ( !b.isAlive() ) {
+	    System.out.println( "Ye olde self hath expired. You got dead." );
+	    return false;
+	}
+	else
+	    return true;
+    }
     public static void main( String[] args ) {
 
 	//As usual, move the begin-comment bar down as you progressively 

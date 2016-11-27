@@ -11,6 +11,7 @@ public class Rogue extends Character {
     //CONSTUCTORS
     public Rogue(){
 	super();
+	speed = 2;
     }
     public Rogue(String nombre){ //overloaded constructor
 	this();

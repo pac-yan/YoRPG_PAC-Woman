@@ -11,6 +11,7 @@ public class Mage extends Character{
     //CONSTRUCTOR
     public Mage(){
 	super();
+	speed = 0;
     }
 
     public Mage(String nombre){

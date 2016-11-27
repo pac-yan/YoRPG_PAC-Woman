@@ -11,6 +11,7 @@ public class Archer extends Character {
     //CONSTUCTORS
     public Archer(){
 	super();
+	speed = 2;
     }
     public Archer(String nombre){ //overloaded constructor
 	this();
